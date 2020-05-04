@@ -1,0 +1,78 @@
+C51 COMPILER V9.01   TIMER                                                                 04/23/2017 00:08:02 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN Timer.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE Timer.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "Timer.h"
+   2          
+   3          uchar time_TH0 = 0xFB;
+   4          uchar time_TL0 = 0xAE;
+   5          uchar time_TH1 = 0xFB;
+   6          uchar time_TL1 = 0xAE;
+   7          
+   8          //定时器0的初始化
+   9          void Timer0_init()
+  10          {
+  11   1              time_TL0 = 0xAE;                //设置定时初值
+  12   1              time_TH0 = 0xFB;                //设置定时初值 100us
+  13   1      
+  14   1              AUXR |= 0x80;           
+  15   1              TMOD &= 0xF0;   
+  16   1              TMOD |= 0x01;   
+  17   1              TF0 = 0;        
+  18   1              TH0 = time_TH0;
+  19   1              TL0 = time_TL0; 
+  20   1              EA = 1;
+  21   1              ET0 = 1;
+  22   1              TR0 = 1;
+  23   1      }
+  24          
+  25          //定时器1的初始化
+  26          void Timer1_init()
+  27          {       
+  28   1              time_TH1 = 0xFB;        
+  29   1              time_TL1 = 0xAE;
+  30   1              AUXR |= 0x40;           
+  31   1              TMOD &= 0xF0;   
+  32   1              TMOD |= 0x10;   
+  33   1              TF1 = 0;        
+  34   1              TH1 = time_TH1;
+  35   1              TL1 = time_TL1; 
+  36   1              EA = 1;
+  37   1              ET1 = 1;
+  38   1              TR1 = 1;
+  39   1      }
+  40          
+  41          //定时器0设定定时值
+  42          void Set_time0(uint t)
+  43          {
+  44   1              time_TH0 = (65535-t)/256;
+  45   1              time_TL0 = (65535-t)%256;
+  46   1      }
+  47          
+  48          //定时器1设定定时值
+  49          void Set_time1(uint t)
+  50          {
+  51   1              time_TH1 = (65535-t)/256;
+  52   1              time_TL1 = (65535-t)%256;
+  53   1      }
+
+
+C51 COMPILER V9.01   TIMER                                                                 04/23/2017 00:08:02 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    210    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

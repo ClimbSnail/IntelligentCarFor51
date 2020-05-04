@@ -1,0 +1,7 @@
+"STARTUP.obj",
+"car.obj",
+"UART.obj",
+"298N.obj",
+"Timer.obj" 
+TO "Car" 
+RAMSIZE(256) 

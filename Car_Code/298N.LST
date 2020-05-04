@@ -1,0 +1,97 @@
+C51 COMPILER V9.01   298N                                                                  04/22/2017 23:59:49 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE 298N
+OBJECT MODULE PLACED IN 298N.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE 298N.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "298N.h"
+   2          
+   3          uchar now_status = 0x00;
+   4          //
+   5          void init_298N()
+   6          {
+   7   1      //       A_IN1 = 0;
+   8   1      //       A_IN2 = 0;
+   9   1      //       A_IN3 = 0;
+  10   1      //       A_IN4 = 0;
+  11   1      //       B_IN1 = 0;
+  12   1      //       B_IN2 = 0;
+  13   1      //       B_IN3 = 0;
+  14   1      //       B_IN4 = 0;
+  15   1               now_status = 0x00;
+  16   1      }
+  17          
+  18          //
+  19          void turn_rigth()
+  20          {
+  21   1      //       A_IN1 = 1;
+  22   1      //       A_IN2 = 0;
+  23   1      //       A_IN3 = 1;
+  24   1      //       A_IN4 = 0;
+  25   1      //       B_IN1 = 0;
+  26   1      //       B_IN2 = 1;
+  27   1      //       B_IN3 = 0;
+  28   1      //       B_IN4 = 1;
+  29   1               now_status = 0xA5;
+  30   1      }
+  31          
+  32          //
+  33          void turn_left()
+  34          {
+  35   1      //       A_IN1 = 0;
+  36   1      //       A_IN2 = 1;
+  37   1      //       A_IN3 = 0;
+  38   1      //       A_IN4 = 1;
+  39   1      //       B_IN1 = 1;
+  40   1      //       B_IN2 = 0;
+  41   1      //       B_IN3 = 1;
+  42   1      //       B_IN4 = 0;
+  43   1               now_status = 0x5A;
+  44   1      }
+  45          
+  46          //
+  47          void turn_backdown()
+  48          {
+  49   1      //       A_IN1 = 0;
+  50   1      //       A_IN2 = 1;
+  51   1      //       A_IN3 = 0;
+  52   1      //       A_IN4 = 1;
+  53   1      //       B_IN1 = 0;
+  54   1      //       B_IN2 = 1;
+  55   1      //       B_IN3 = 0;
+C51 COMPILER V9.01   298N                                                                  04/22/2017 23:59:49 PAGE 2   
+
+  56   1      //       B_IN4 = 1;
+  57   1               now_status = 0xAA;
+  58   1      }
+  59          
+  60          //
+  61          void turn_forward()
+  62          {
+  63   1      //       A_IN1 = 1;
+  64   1      //       A_IN2 = 0;
+  65   1      //       A_IN3 = 1;
+  66   1      //       A_IN4 = 0;
+  67   1      //       B_IN1 = 1;
+  68   1      //       B_IN2 = 0;
+  69   1      //       B_IN3 = 1;
+  70   1      //       B_IN4 = 0;
+  71   1               now_status = 0x55;
+  72   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     20    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
