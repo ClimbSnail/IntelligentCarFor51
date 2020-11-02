@@ -14,6 +14,6 @@
 
 
 #### ¿ØÖÆÆ÷ÊµÎïÍ¼
-![Image](./Image/PhysicalDiagram .jpg)
+![Image](./Image/PhysicalDiagram.jpg)
 
 ![Image](./Image/PCB_TOP.png)
